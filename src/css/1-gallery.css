@@ -1,0 +1,53 @@
+/* #region resets */
+* {
+  box-sizing: border-box;
+}
+
+img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+ul {
+  margin: 0;
+  list-style-type: none;
+  padding-left: 0;
+}
+
+/* #endregion resets */
+
+/* #region gallery */
+body {
+  padding: 16px;
+  background-color: #ffffff;
+  font-family: 'Montserrat', sans-serif;
+  line-height: 1.5;
+}
+
+.gallery {
+  margin: 0 auto;
+  width: 1128px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 24px;
+  background-color: transparent;
+}
+
+.gallery-item {
+  width: 360px;
+  height: 200px;
+  transition: transform 200ms ease-in-out;
+  /* width: calc((100% - 48px) / 3); */
+}
+
+.gallery-item:hover {
+  transform: scale(1.04);
+}
+
+.basicLightbox {
+  background-color: #2e2f42;
+}
+
+/* #endregion gallery */

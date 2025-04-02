@@ -1,5 +1,3 @@
-import SimpleLightbox from 'simplelightbox';
-import 'simplelightbox/dist/simple-lightbox.min.css';
 const images = [
   {
     preview:
@@ -65,31 +63,30 @@ const images = [
     description: 'Lighthouse Coast Sea',
   },
 ];
-const galleryHTML = document.querySelector('.gallery');
-let markup = ``;
-for (const img of images) {
-  markup += `<li class="gallery-item">
-  <a class="gallery-link" href="${img.original}">
-    <img
-      class="gallery-image"
-      src="${img.preview}"
-      data-source="${img.original}"
-      alt="${img.description}"
-    />
-  </a>
-</li>`;
-}
-galleryHTML.innerHTML = markup;
 
-const galleryOption = {
+import SimpleLightbox from 'simplelightbox';
+import 'simplelightbox/dist/simple-lightbox.min.css';
+
+const gallery = document.querySelector('.gallery');
+
+const markUp = images
+  .map(
+    image => `
+<li class="gallery-item">
+	<a class="gallery-link" href="${image.original}">
+		<img 
+		  class="gallery-image" 
+		  src="${image.preview}" 
+		  alt="${image.description}" 
+		/>
+	</a>
+</li>`
+  )
+  .join('');
+
+gallery.insertAdjacentHTML('beforeend', markUp);
+
+const lightbox = new SimpleLightbox('.gallery a', {
   captionsData: 'alt',
   captionDelay: 250,
-};
-let gallery = new SimpleLightbox('.gallery a', galleryOption);
-gallery.on('show.simplelightbox', function () {
-  // Do something…
-});
-
-gallery.on('error.simplelightbox', function (e) {
-  console.log(e); // Some usefull information
 });
