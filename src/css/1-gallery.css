@@ -1,53 +1,56 @@
-/* #region resets */
-* {
-  box-sizing: border-box;
-}
+/* 1-gallery */
 
-img {
-  display: block;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-
-ul {
-  margin: 0;
-  list-style-type: none;
-  padding-left: 0;
-}
-
-/* #endregion resets */
-
-/* #region gallery */
 body {
-  padding: 16px;
-  background-color: #ffffff;
-  font-family: 'Montserrat', sans-serif;
-  line-height: 1.5;
+  display: flex;
+  justify-content: center; 
+  align-items: center; 
+  height: 100%; 
+  margin: 0;
+  background-color: #f5f5f5;
 }
 
 .gallery {
-  margin: 0 auto;
-  width: 1128px;
+  list-style: none;
   display: flex;
   flex-wrap: wrap;
   gap: 24px;
-  background-color: transparent;
+  padding: 0;
+  margin: 0 auto;
+  max-width: calc(3 * 360px + 2 * 24px);
+  transition: width 0.4s ease-in-out, height 0.4s ease-in-out;
 }
 
 .gallery-item {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   width: 360px;
   height: 200px;
-  transition: transform 200ms ease-in-out;
-  /* width: calc((100% - 48px) / 3); */
+  overflow: hidden;
+  transition: width 0.4s ease-in-out, height 0.4s ease-in-out;
+}
+
+.gallery-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.gallery-image:hover,
+.gallery-image:focus {
+    width: 376px;
+    height: 208px;
 }
 
 .gallery-item:hover {
-  transform: scale(1.04);
+  transform: scale(1.044);
 }
 
-.basicLightbox {
-  background-color: #2e2f42;
+.gallery-item:hover .gallery-image {
+  transform: scale(1.044); 
 }
 
-/* #endregion gallery */
+.sl-overlay {  
+  background-color: #2E2F42 !important;
+}  

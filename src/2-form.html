@@ -4,20 +4,29 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-    <link rel="stylesheet" href="./css/2-form.css" />
+
+    <link rel="stylesheet" href="./css/styles.css" />
   </head>
-  <body class="body-bg">
+  <body>
+    <a href="./index.html">Go back</a>
+
     <form class="feedback-form" autocomplete="off">
-      <label class="label-email">
+      <label class="form-label">
         Email
-        <input class="input-email" type="email" name="email" autofocus />
+        <input class="form-email" type="email" name="email" autofocus />
       </label>
-      <label class="label-message">
+      <label class="form-label">
         Message
-        <textarea class="textarea-message" name="message" rows="8"></textarea>
+        <textarea
+          class="form-message"
+          name="message"
+          rows="8"
+          placeholder="Type area"
+        ></textarea>
       </label>
-      <button class="btn-submit" type="submit">Submit</button>
+      <button class="form-btn" type="submit">Submit</button>
     </form>
+
     <script type="module" src="./js/2-form.js"></script>
   </body>
 </html>
